@@ -26,12 +26,15 @@ dict_of_leet = {
     'X': '}{',
     'Y': "'/",
     'Z': '2',
-    '.': '.',
 }
 list_of = sys.argv
 del list_of[0]
 for w in list_of:
     for c in w:
-        print(dict_of_leet[c.upper()] , end='')
+        c = c.upper()
+        if not c in dict_of_leet:
+            print(c , end="")
+            continue
+        print(dict_of_leet[c] , end='')
     print(" ",end='')
 print('')
